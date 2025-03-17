@@ -123,7 +123,6 @@ namespace MyFace.Data
 
         private static User CreateRandomUser(int index)
         {   
-            //string password = PasswordGenerator.GetPassword(index);
             string password = "password123";
             byte[] salt = HashAndSalt.GetSalt();
             string hashedPassword = HashAndSalt.GetHashedPassword(password, salt);
@@ -137,7 +136,7 @@ namespace MyFace.Data
                 ProfileImageUrl = ImageGenerator.GetProfileImage(Data[index][2]),
                 CoverImageUrl = ImageGenerator.GetCoverImage(index),
                 HashedPassword = hashedPassword,
-                Salt = salt
+                Salt = Convert.ToBase64String(salt)
             };
         }
     }
