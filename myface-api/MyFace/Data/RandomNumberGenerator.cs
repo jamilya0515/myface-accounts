@@ -21,15 +21,5 @@ namespace MyFace.Data
         {
             return Random.Next(0, 2) == 0 ? InteractionType.LIKE : InteractionType.DISLIKE;
         }
-
-        internal static IDisposable Create()
-        {
-            throw new NotImplementedException();
-        }
-
-        internal static void Fill(byte[] salt)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
